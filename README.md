@@ -16,11 +16,9 @@ The ```-fsanitize=address``` option tells GCC to use the address sanitizer. A sa
 
 Note that these options aren't need on your header files, but won't hurt.
 
-## The sanitizer vs Valgrind
-
-You may have heard of Valgrind as another way to locate memory bugs. Both accomplish the same objective in that sense. The address sanitizer slows down your compiled code but is substantially faster than running the code with Valgrind, however it is built into the code so that's an automatic performance hit (a slowdown of about ~2x according to the docs) every time you run the code until you recompile it without the sanitizer. Another difference is Valgrind can be used in cases when you don't have access to the source code, only the executables. In debugging my own code, I prefer sanitizers because I have the source and they're what I'm comfortable with.
-
 ## What the sanitizer can warn you about
+
+See [the AddressSanitizer docs](https://github.com/google/sanitizers/wiki/AddressSanitizer) for more info!
 
 ### Use after free (dangling pointer dereference)
 
@@ -49,3 +47,14 @@ Similar to use after return, this is an issue that can occur when some variable 
 ### Memory leaks
 
 AddressSanitizer incorporates LeakSanitizer, so it can detect any time memory is leaked: allocated onto the heap without being freed at any point. You can actually achieve this functionality with the ```-fsanitize=leak``` option, which won't slow your program down like the address sanitizer does, but you'd miss out on all the other great features of AddressSanitizer.
+
+## The sanitizer vs Valgrind
+
+You may have heard of Valgrind as another way to locate memory bugs. Both accomplish the same objective in that sense. The address sanitizer slows down your compiled code but is substantially faster than running the code with Valgrind, however it is built into the code so that's an automatic performance hit (a slowdown of about ~2x according to the docs) every time you run the code until you recompile it without the sanitizer. Another difference is Valgrind can be used in cases when you don't have access to the source code, only the executables. In debugging my own code, I prefer sanitizers because I have the source and they're what I'm comfortable with.
+
+## Interpreting the output
+
+AddressSanitizer will collect call stacks for allocations/frees, thread creations, and any failures. Look out primarily for the code closest to the top of these stacks (if they are displayed) that is not code belonging to the standard library, which is in all likelihood not the cause of a bug. (Standard library code is easy to spot: it probably has your architecture in the name and may include things like "glibc.")
+
+Additionally, the sanitizer actually provides its own implementation for ```malloc()``` and ```free()``` so that it can keep track of heap memory. It tracks "shadow" memory that contains metadata for main memory. 1 byte of shadow memory corresponds to 8 bytes of main memory. If the sanitizer detects issues, you'll see a map of shadow memory corresponding to the area around the buggy address after any relevant call stacks print. If you see anything about "poisoning," just bear in mind that refers to writing some special value to shadow memory.
+
