@@ -1,5 +1,7 @@
 # ASan: The Address Sanitizer
 
+[My video on ASan](https://youtu.be/YdymXSdGs8k)
+
 A sanitizer is just something that is actually built into your code at compile time so that undesirable behavior can be detected and reported at runtime. AddressSanitizer reports bugs to do with memory management. There are also other types of sanitizers; of interest might be ThreadSanitizer and UndefinedBehaviorSanitizer! Check out the [compiler-rt runtime libraries project at llvm.org](https://compiler-rt.llvm.org/) to learn about them all.
 
 (If you want to see how to use them all with GCC, enter `info gcc` into your terminal and navigate to Invoking GCC > Instrumentation Options. Search for "fsanitize" by entering "/fsanitize <enter>" while in info mode. To navigate to the next/previous search result, enter "n" or "N". To quit, enter ":q".)

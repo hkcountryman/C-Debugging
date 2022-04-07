@@ -1,5 +1,7 @@
 # GDB: The Gnu Debugger
 
+[My video on GDB basics](https://youtu.be/KIRICtLtbPw)
+
 The Gnu Debugger, or GDB, is a debugger for a ton of different languages, but what we care about is that it can debug C. `gdb` is the text-based debugger, but numerous implementations exist that add a graphical interface. In this tutorial we'll use the text-based debugger because
 
 - it is my preference since it involves less clicking and moving the mouse around (yes, I'm that lazy), and
