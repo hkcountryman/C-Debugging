@@ -4,16 +4,16 @@
 #include "foo.h"
 
 person* create_person(char *name, char *phone) {
-    person* person = malloc(sizeof(person));
-    person->name = name;
-    strcpy(person->phone, phone);
-    return person;
+    person* p = malloc(sizeof(person));
+    p->name = name;
+    strcpy(p->phone, phone);
+    return p;
 }
 
-void call(person *person) {
+void call(person *p) {
     printf("Dialing (");
     for (int i = 0; i < 10; i++) {
-        printf("%d", person->phone[i]);
+        printf("%d", p->phone[i]);
         if (i == 2) {
             printf(")");
         }
@@ -22,7 +22,7 @@ void call(person *person) {
         }
     }
     printf("...\n");
-    printf("Hello, %s here! Is this the person to whom I am speaking?", person->name);
+    printf("Hello, %s here! Is this the person to whom I am speaking?", p->name);
 }
 
 int main (int argc, char **argv) {

@@ -5,4 +5,4 @@ typedef struct {
 
 person* create_person(char *name, char *phone);
 
-void call(person *person);
+void call(person *p);
