@@ -1,5 +1,5 @@
 /**
- * @author René García Avilés, comment translations by Halle Countryman
+ * @author René García Avilés, Halle Countryman
  * @brief Buggy quick sort implementation
  */
 
@@ -16,7 +16,7 @@ int main(void) {
     printf("Array size: ");
     scanf("%d", &size);
 
-    int arr[size];
+    int* arr = malloc(sizeof(int) * size);
     setArr(arr, size);
 
     printf("Unordered array: \n");
