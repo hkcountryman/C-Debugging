@@ -18,7 +18,7 @@ person* create_person(char *name, char *phone) {
 void call(person *p) {
     printf("Dialing (");
     for (int i = 0; i < 10; i++) {
-        printf("%d", p->phone[i]);
+        printf("%c", p->phone[i]);
         if (i == 2) {
             printf(")");
         }
@@ -27,11 +27,11 @@ void call(person *p) {
         }
     }
     printf("...\n");
-    printf("Hello, %s here! Is this the person to whom I am speaking?", p->name);
+    printf("Hello, %s here! Is this the person to whom I am speaking?\n", p->name);
 }
 
 int main (int argc, char **argv) {
-    person *p = create_person("Halle", "15551234567");
+    person *p = create_person("Halle", "5551234567");
     call(p);
     return 0;
 }

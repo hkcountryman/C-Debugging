@@ -1,6 +1,6 @@
 typedef struct {
     char *name;
-    int phone[10];
+    char phone[10];
 } person;
 
 person* create_person(char *name, char *phone);
