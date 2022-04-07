@@ -18,7 +18,7 @@ The `-g` flag compiles the program with debugging symbols. This is a must for us
 
 The `-fsanitize=address` option tells GCC to compile so that ASan will be used at runtime.
 
-`-fno-omit-frame-pointer` is probably unnecessary but might be needed. It's one of those things that doesn't hurt to use and might help. Better yet, it isn't as awful to type as it appears: start typing "-fno-om" and press tab to complete! Its related option, `-fomit-frame-pointer`, tells the compiler to avoid storing stack frame pointers in a register if possible, which can technically grant some marginal performance improvements. That is the default behavior. By contrast, using this flag tells the compiler _not_ to do that and so forces the compiler to set aside a register for the frame pointer. That is desirable because we are not trying to optimize this code, we're trying to debug it, and if we don't keep the frame pointer readily available the debugger isn't always able to generate a nice stack trace.
+`-fno-omit-frame-pointer` is probably unnecessary but might be needed. It's one of those things that doesn't hurt to use and might help. Better yet, it isn't as awful to type as it appears: start typing "-fno-om" and press tab to complete! It tells the compiler to reserve a register for storing the frame pointer. That is desirable because we are not trying to optimize this code (though if we were, the difference this makes is really negligible) - we're trying to debug it. If we don't keep the frame pointer readily available the debugger isn't always able to generate a nice stack trace.
 
 Note that these options aren't need on your header files, but won't hurt.
 
