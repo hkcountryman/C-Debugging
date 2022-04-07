@@ -24,6 +24,8 @@ Many of these have shortened versions! You'll probably recognize their functiona
 |-|-|-|
 | `help \<c\>` | `h` | Help info about command c |
 | | | |
+| `file <b>` | | Reload the symbol table after recompiling the binary b to debug a modified program without quitting GDB |
+| | | |
 | `break \<n\>` | `b` | Insert breakpoint at line n/function named "n" |
 | `break \<f\>::\<n\>` | `b` | Insert breakpoint at line n/function named "n" of file "f" (no file extension) |
 | `disable \<#\>` | `dis` | Temporarily disable breakpoint # |
@@ -46,4 +48,3 @@ Many of these have shortened versions! You'll probably recognize their functiona
 | `reverse-continue` | `rc` | Go back to point at which program last stopped |
 | `reverse-step` | | Step *backwards* into the last executed line, if it was a function |
 | `reverse-next` | | Go back one line |
-
