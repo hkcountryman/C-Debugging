@@ -49,3 +49,5 @@ Many of these have shortened versions! You'll probably recognize their functiona
 | `reverse-continue` | `rc` | Go back to point at which program last stopped |
 | `reverse-step` | `rs` | Step *backwards* into the last executed line, if it was a function |
 | `reverse-next` | `rn` | Go back one line |
+| | | |
+| `quit` | `q` | Quit GDB |
