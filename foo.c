@@ -1,3 +1,8 @@
+/**
+ * @author Halle Countryman
+ * @brief Basic GDB demo: Dial up Halle at 1-555-123-4567!
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
