@@ -19,9 +19,6 @@ int main(void) {
     int* arr = malloc(sizeof(int) * size);
     setArr(arr, size);
 
-    printf("Unordered array: \n");
-    printArr(arr, size);
-
     quickSort(arr, 0, size - 1);
 
     printf("\nOrdered array: \n");
@@ -30,6 +27,12 @@ int main(void) {
     return EXIT_SUCCESS;
 }
 
+/**
+ * @brief Gather user input and fill in an array
+ * 
+ * @param arr array to fill
+ * @param size size of arr
+ */
 void setArr(int arr[], int size) {
     for(size_t i = 0; i < size; i++) {
         printf("Assign to pos %zu: ", i);
@@ -37,6 +40,12 @@ void setArr(int arr[], int size) {
     }
 }
 
+/**
+ * @brief Print an array
+ * 
+ * @param arr array to print
+ * @param size size of arr
+ */
 void printArr(int arr[], int size) {
     for(size_t i = 0; i < size; i++) {
         printf("Value at %zu -> %d\n", i, arr[i]);
