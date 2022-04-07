@@ -1,6 +1,10 @@
 # C Debugging
 
-The code in this repository is designed to debug as an exercise. See the video for a demo of GDB, the Gnu Debugger, and AddressSanitizer ("ASan"), an open source dynamic testing tool for catching memory bugs.
+The code in this repository is designed to debug as an exercise to learn to use GDB, the Gnu Debugger, and AddressSanitizer ("ASan"), an open source dynamic testing tool for catching memory bugs.
+
+[Click here for a demo!]()
+
+**The main branch is intentionally buggy.**
 
 ## Compiling the code in this repository for use with ASan and GDB
 
