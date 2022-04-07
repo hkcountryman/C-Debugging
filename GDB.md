@@ -22,17 +22,17 @@ Many of these have shortened versions! You'll probably recognize their functiona
 
 | Command | Abbrev. | Action
 |-|-|-|
-| `help \<c\>` | `h` | Help info about command c |
+| `help <c>` | `h` | Help info about command c |
 | | | |
 | `file <b>` | | Reload the symbol table after recompiling the binary b to debug a modified program without quitting GDB |
 | | | |
-| `break \<n\>` | `b` | Insert breakpoint at line n/function named "n" |
-| `break \<f\>::\<n\>` | `b` | Insert breakpoint at line n/function named "n" of file "f" (no file extension) |
-| `disable \<#\>` | `dis` | Temporarily disable breakpoint # |
-| `enable \<#\>` | `en` | Re-enable breakpoint # |
-| `delete \<#...\>` | `d` | Delete breakpoint(s) # |
+| `break <n>` | `b` | Insert breakpoint at line n/function named "n" |
+| `break <f>::<n>` | `b` | Insert breakpoint at line n/function named "n" of file "f" (no file extension) |
+| `disable <#>` | `dis` | Temporarily disable breakpoint # |
+| `enable <#>` | `en` | Re-enable breakpoint # |
+| `delete <#...>` | `d` | Delete breakpoint(s) # |
 | `delete` | `d` | Delete all breakpoints |
-| `condition \<#\> \<e\>` | `cond` | Stop at breakpoint # if expression e is true |
+| `condition <#> <e>` | `cond` | Stop at breakpoint # if expression e is true |
 | | | |
 | `run` | `r` | (Re)start the program until next breakpoint, crash, or end |
 | `continue` | `c` | Continue until next breakpoint, crash, or end |
@@ -42,7 +42,7 @@ Many of these have shortened versions! You'll probably recognize their functiona
 | `down` | `do` | Go back down (call after `up`) |
 | `list` | `l` | Show surrounding code around current line |
 | | | |
-| `print \<e\>` | `p` | Print expression (identifier, or evaluate e) |
+| `print <e>` | `p` | Print expression (identifier, or evaluate e) |
 | | | |
 | `record` / `record btrace` | | Enable rewinding from this point on in an already running program (not available on all environments; requisite for following commands) |
 | `reverse-continue` | `rc` | Go back to point at which program last stopped |
