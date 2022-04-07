@@ -14,10 +14,10 @@ void call(person *person) {
     printf("Dialing (");
     for (int i = 0; i < 10; i++) {
         printf("%d", person->phone[i]);
-        switch (i) {
-        case 2:
+        if (i == 2) {
             printf(")");
-        case 5:
+        }
+        if (i == 5) {
             printf("-");
         }
     }
