@@ -4,14 +4,16 @@ The code in this repository is designed to debug as an exercise to learn to use 
 
 [Click here for a demo!]()
 
-**The main branch is intentionally buggy.**
+**The main branch is intentionally buggy. See solutions on debug branch!**
 
 ## Compiling the code in this repository for use with ASan and GDB
 
 We'll be using GCC (I'm using v11.2) and some special compiler options:
 
 ```
-gcc ./*.c -g -fsanitize=address -fno-omit-frame-pointer
+gcc -g foo.*
+gcc -g reverso.c
+gcc -g -fsanitize=address -fno-omit-frame-pointer quicksort.c
 ```
 
 The `-g` flag compiles the program with debugging symbols. This is a must for using GDB, and you'll get more info out of your address sanitizer if you use it because it will be able to keep track of line numbers in your source code!
