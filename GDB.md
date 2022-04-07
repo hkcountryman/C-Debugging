@@ -25,6 +25,7 @@ Many of these have shortened versions! You'll probably recognize their functiona
 | `help <c>` | `h` | Help info about command c |
 | | | |
 | `file <b>` | | Reload the symbol table after recompiling the binary b to debug a modified program without quitting GDB |
+| `directory` | | Update the `list` command to match recompiled binary; run after `file <b>` |
 | | | |
 | `break <n>` | `b` | Insert breakpoint at line n/function named "n" |
 | `break <f>::<n>` | `b` | Insert breakpoint at line n/function named "n" of file "f" (no file extension) |
