@@ -24,6 +24,8 @@ int main(void) {
     printf("\nOrdered array: \n");
     printArr(arr, size);
 
+    free(arr);
+
     return EXIT_SUCCESS;
 }
 
@@ -63,30 +65,32 @@ void printArr(int arr[], int size) {
  * @param last index to stop sorting at (inclusive)
  */
 void quickSort(int arr[], int first, int last) {
-    int pivot = arr[last]; // Pivot is last value
-    int temp;
-    int j = first - 1; // Index as we iterate along array
+    if (first < last) {
+        int pivot = arr[last]; // Pivot is last value
+        int temp;
+        int j = first - 1; // Index as we iterate along array
 
-    // Put everything smaller left of the pivot
-    for(size_t i = first; i < last; i++) { // For each element
-        if(arr[i] < pivot) { // If it is smaller than pivot
-            j++; // Increment index to place smaller element at
+        // Put everything smaller left of the pivot
+        for(size_t i = first; i < last; i++) { // For each element
+            if(arr[i] < pivot) { // If it is smaller than pivot
+                j++; // Increment index to place smaller element at
 
-            // Interchange so smaller element is at index j
-            temp = arr[j];
-            arr[j] = arr[i];
-            arr[i] = temp;
+                // Interchange so smaller element is at index j
+                temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
         }
+
+        // Interchange pivot with element at index j+1
+        temp = arr[j + 1];
+        arr[j + 1] = arr[last];
+        arr[last] = temp;
+
+        j++; // Increment j to get index of pivot
+
+        // Recursively sort on either side of pivot:
+        quickSort(arr, first, j - 1); // First half up to right before pivot
+        quickSort(arr, j + 1, last); // Latter half, starting right after pivot
     }
-
-    // Interchange pivot with element at index j+1
-    temp = arr[j + 1];
-    arr[j + 1] = arr[last];
-    arr[last] = temp;
-
-    j++; // Increment j to get index of pivot
-
-    // Recursively sort on either side of pivot:
-    quickSort(arr, first, j - 1); // First half up to right before pivot
-    quickSort(arr, j + 1, last); // Latter half, starting right after pivot
 }
