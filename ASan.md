@@ -1,6 +1,8 @@
 # ASan: The Address Sanitizer
 
-See [the docs](https://github.com/google/sanitizers/wiki/AddressSanitizer) for more info!
+A sanitizer is just something that is actually built into your code at compile time so that undesirable behavior can be detected and reported at runtime. AddressSanitizer reports bugs to do with memory management. There are also other types of sanitizers; of interest might be ThreadSanitizer and UndefinedBehaviorSanitizer! Check out the [compiler-rt runtime libraries project at llvm.org](https://compiler-rt.llvm.org/) to learn about them all.
+
+(If you want to see how to use them all with GCC, enter `info gcc` into your terminal and navigate to Invoking GCC > Instrumentation Options. Search for "fsanitize" by entering "/fsanitize <enter>" while in info mode. To navigate to the next/previous search result, enter "n" or "N". To quit, enter ":q".)
 
 ## What ASan can warn you about
 
@@ -37,6 +39,8 @@ AddressSanitizer incorporates LeakSanitizer, so it can detect any time memory is
 AddressSanitizer will collect call stacks for allocations/frees, thread creations, and any failures. Look out primarily for the code closest to the top of these stacks (if they are displayed) that is not code belonging to the standard library, which is in all likelihood not the cause of a bug. (Standard library code is easy to spot: it probably has your architecture in the name and may include things like "glibc.") These call stacks are great for figuring out where to start debugging. Segmentation faults become run-of-the-mill crashes instead of nightmarish horrors that everyone inexplicably hates more than Python crashes when they come with stack traces!
 
 Additionally, the sanitizer actually provides its own implementation for ```malloc()``` and ```free()``` so that it can keep track of heap memory. It tracks "shadow" memory that contains metadata for main memory. 1 byte of shadow memory corresponds to 8 bytes of main memory. If the sanitizer detects issues, you'll see a map of shadow memory corresponding to the area around the buggy address after any relevant call stacks print. If you see anything about "poisoning," just bear in mind that refers to writing some special value to shadow memory.
+
+See [Google's wonderful docs](https://github.com/google/sanitizers/wiki/AddressSanitizer) for more info and usage examples!
 
 ## The sanitizer vs Valgrind
 
