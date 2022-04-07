@@ -22,8 +22,6 @@ The `-fsanitize=address` option tells GCC to compile so that ASan will be used a
 
 `-fno-omit-frame-pointer` is probably unnecessary but might be needed. It's one of those things that doesn't hurt to use and might help. Better yet, it isn't as awful to type as it appears: start typing "-fno-om" and press tab to complete! It tells the compiler to reserve a register for storing the frame pointer. That is desirable because we are not trying to optimize this code (though if we were, the difference this makes is really negligible) - we're trying to debug it. If we don't keep the frame pointer readily available the debugger isn't always able to generate a nice stack trace.
 
-Note that these options aren't need on your header files, but won't hurt.
-
 ## Also see
 
 [More about GDB](https://github.com/hkcountryman/C-Debugging/blob/main/GDB.md)
