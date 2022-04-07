@@ -2,7 +2,7 @@
 
 The code in this repository is designed to debug as an exercise to learn to use GDB, the Gnu Debugger, and AddressSanitizer ("ASan"), an open source dynamic testing tool for catching memory bugs.
 
-[Click here for a demo!]()
+[Click here for the accompanying playlist!](https://www.youtube.com/playlist?list=PLL5qsNefCAyXBJBMxNVeYm3MrFQe-PAtQ)
 
 **The main branch is intentionally buggy. See solutions on debug branch!**
 
