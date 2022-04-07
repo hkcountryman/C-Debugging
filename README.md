@@ -26,5 +26,4 @@ Note that these options aren't need on your header files, but won't hurt.
 
 ## Thanks
 
-It's surprisingly hard to write interesting bugs intentionally - thank you to [René García Avilés](https://github.com/Germfreekai) for providing the basis for quicksort.c!
-
+It's surprisingly hard to write interesting bugs intentionally - thank you to [René García Avilés](https://github.com/Germfreekai) for giving me permission to modify and use quicksort.c!
